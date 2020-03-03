@@ -7,6 +7,7 @@ import {
     DialogTitle
 } from '@material-ui/core'
 
+
 class AddCar extends Component {
     state = {
         open: false,
@@ -30,6 +31,8 @@ class AddCar extends Component {
         payload.id = this.props.carTotal + 1
         delete payload.open
         console.log("THE CAR", payload)
+        this.props.addCar(payload)
+        this.setState({ open: false })
         // add this.props.addCar function here
         // also add this.setState to close the dialog
     }
